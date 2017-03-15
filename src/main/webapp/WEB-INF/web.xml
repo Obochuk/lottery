@@ -1,0 +1,43 @@
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>baseServlet</servlet-name>
+    <servlet-class>obochuk.vlad.servlets.BaseServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>obochuk.vlad.servlets.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>registerServlet</servlet-name>
+    <servlet-class>obochuk.vlad.servlets.RegisterServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>photoServlet</servlet-name>
+    <servlet-class>obochuk.vlad.servlets.PhotoServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>baseServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>registerServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>photoServlet</servlet-name>
+    <url-pattern>/photoServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
