@@ -20,7 +20,7 @@ public final class LoginServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/login.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -34,16 +34,15 @@ public final class LoginServlet extends HttpServlet{
 
         try {
             Integer id = worker.validate(name, password);
-            resp.addCookie(new Cookie("logined", "true"));
             resp.addCookie(new Cookie("id", id.toString()));
             resp.sendRedirect(req.getContextPath() + "/");
         }catch (WrongUsernameException e){
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/index.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/login.jsp");
             req.setAttribute("message", "Wrong username!");
             dispatcher.include(req, resp);
         }
         catch (WrongPasswordException e){
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/index.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/pages/login.jsp");
             req.setAttribute("message", "Wrong password!");
             dispatcher.include(req, resp);
         }

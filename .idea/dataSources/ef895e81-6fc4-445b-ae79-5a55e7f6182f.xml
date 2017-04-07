@@ -11,90 +11,139 @@
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="sys"/>
     <schema id="7" parent="1" name="test"/>
-    <table id="8" parent="2" name="clients"/>
+    <table id="8" parent="2" name="result"/>
     <table id="9" parent="2" name="users"/>
-    <column id="10" parent="8" name="ID">
+    <table id="10" parent="2" name="usersn"/>
+    <column id="11" parent="8" name="time">
       <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="12" parent="8" name="Num">
+      <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="11" parent="8" name="FirstName">
-      <Position>2</Position>
-      <DataType>varchar(35)|0</DataType>
-    </column>
-    <column id="12" parent="8" name="SecondName">
+    <column id="13" parent="8" name="result">
       <Position>3</Position>
-      <DataType>varchar(35)|0</DataType>
-    </column>
-    <column id="13" parent="8" name="TP">
-      <Position>4</Position>
-      <DataType>varchar(35)|0</DataType>
-    </column>
-    <column id="14" parent="8" name="Bill">
-      <Position>5</Position>
       <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="15" parent="8" name="clients_ID_uindex">
-      <ColNames>ID</ColNames>
+    <index id="14" parent="8" name="result_Num_uindex">
+      <ColNames>Num</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="16" parent="8" name="PRIMARY">
-      <ColNames>ID</ColNames>
+    <key id="15" parent="8" name="PRIMARY">
+      <ColNames>Num</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="17" parent="8" name="clients_ID_uindex">
-      <ColNames>ID</ColNames>
-      <UnderlyingIndexName>clients_ID_uindex</UnderlyingIndexName>
+    <key id="16" parent="8" name="result_Num_uindex">
+      <ColNames>Num</ColNames>
+      <UnderlyingIndexName>result_Num_uindex</UnderlyingIndexName>
     </key>
-    <column id="18" parent="9" name="userID">
+    <column id="17" parent="9" name="userID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="19" parent="9" name="userName">
+    <column id="18" parent="9" name="userName">
       <Position>2</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="9" name="userPassword">
+    <column id="19" parent="9" name="userPassword">
       <Position>3</Position>
       <DataType>varchar(35)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="9" name="userDescription">
+    <column id="20" parent="9" name="userDescription">
       <Position>4</Position>
       <DataType>varchar(500)|0</DataType>
     </column>
-    <column id="22" parent="9" name="photo">
+    <column id="21" parent="9" name="photo">
       <Position>5</Position>
       <DataType>longblob|0</DataType>
     </column>
-    <column id="23" parent="9" name="cropedPhoto">
+    <column id="22" parent="9" name="cropedPhoto">
       <Position>6</Position>
       <DataType>mediumblob|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="24" parent="9" name="userID_UNIQUE">
+    <index id="23" parent="9" name="userID_UNIQUE">
       <ColNames>userID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="25" parent="9" name="userName_UNIQUE">
+    <index id="24" parent="9" name="userName_UNIQUE">
       <ColNames>userName</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="26" parent="9" name="PRIMARY">
+    <key id="25" parent="9" name="PRIMARY">
       <ColNames>userID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="27" parent="9" name="userID_UNIQUE">
+    <key id="26" parent="9" name="userID_UNIQUE">
       <ColNames>userID</ColNames>
       <UnderlyingIndexName>userID_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="28" parent="9" name="userName_UNIQUE">
+    <key id="27" parent="9" name="userName_UNIQUE">
       <ColNames>userName</ColNames>
       <UnderlyingIndexName>userName_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="28" parent="10" name="userID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="10" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="10" name="userPassword">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="10" name="userDescription">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="32" parent="10" name="photo">
+      <Position>5</Position>
+      <DataType>longblob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="10" name="cropedPhoto">
+      <Position>6</Position>
+      <DataType>mediumblob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="10" name="gues">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="35" parent="10" name="usersn_userID_uindex">
+      <ColNames>userID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="36" parent="10" name="usersn_userName_uindex">
+      <ColNames>userName</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="10" name="PRIMARY">
+      <ColNames>userID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="38" parent="10" name="usersn_userID_uindex">
+      <ColNames>userID</ColNames>
+      <UnderlyingIndexName>usersn_userID_uindex</UnderlyingIndexName>
+    </key>
+    <key id="39" parent="10" name="usersn_userName_uindex">
+      <ColNames>userName</ColNames>
+      <UnderlyingIndexName>usersn_userName_uindex</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

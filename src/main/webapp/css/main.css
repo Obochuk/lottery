@@ -1,0 +1,65 @@
+html{
+    background: #e6e9e9 linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);
+}
+
+body{
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2em 2em auto auto;
+}
+
+header nav{
+    display: flex;
+    justify-content: flex-end;
+}
+
+header a{
+    text-decoration: none;
+    font-size: 20px;
+    margin: 20px;
+    background: #8f80ff;
+    color: white;
+}
+
+.log{
+    text-decoration: none;
+    user-select: none;
+    margin-left: 30px;
+    background: rgb(212, 75, 56);
+    padding: .3em .7em;
+    outline: none;
+    color: white;
+}
+
+.log:hover{
+    background: rgb(232, 95, 76);
+}
+
+.log:active{
+    background: rgb(152, 15, 0);
+}
+
+header h1{
+    font-weight: 700;
+}
+
+.white{
+    background: #fff;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
+.content{
+    background-size: contain;
+    background: url('../pages/images/try.jpg') no-repeat center;
+    height: 422px;
+    width: 750px;
+    margin: 25px;
+    color: aliceblue;
+    font-size: 30px;
+    text-align: center;
+}

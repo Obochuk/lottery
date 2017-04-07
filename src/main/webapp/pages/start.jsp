@@ -1,12 +1,8 @@
-<%@ page import="java.util.Date" %>
-<%@ page import="java.util.Calendar" %>
-<%@ page import="java.time.LocalDateTime" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <title>Головна сторінка</title>
+    <title>New super LOTTERY</title>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -34,27 +30,17 @@
         <hr>
     </header>
 
-    <div class="content">
-        <strong><a href="deal">Зроби ставку</a> та вигравай просто зараз!</strong>
-        <br>
-        <p style="vertical-align: middle">
-            <strong>Результати попереднього розіграшу</strong>
-        <p align="center" style="color: #8f80ff">
-            ${time} ${result}
-        </p>
-        ${text}
-        </p>
-
-        <strong>Не втрачай можливості взяти участь у наступному розіграші, що відбудеться
-            <%
-                Date today = new Date();
-                Date tomorrow = new Date(today.getTime() + (1000 * 60 * 60 * 24));
-                java.sql.Date tmr = new java.sql.Date(tomorrow.getTime());
-                out.print("<p align='center'>" + tmr + "</p>");
-            %>
-
-        </strong>
+    <h1 align="center">Старт розіграшу</h1> <br>
+    <div align="center">
+    <form  action="start" method="get">
+        <input type="submit" name="start" value="Почати розіграш">
+    </form>
     </div>
+    <br>
+
+    <p style="border: 1px; border-color: blueviolet; text-align: center">${result}</p>
+
+
 </div>
 
 <p align="center">The developer is <a href="https://www.linkedin.com/in/vlad-obochuk-ab9494ba/">Vlad Obochuk</a>.

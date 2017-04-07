@@ -17,9 +17,34 @@
   </servlet>
 
   <servlet>
-    <servlet-name>photoServlet</servlet-name>
-    <servlet-class>obochuk.vlad.servlets.PhotoServlet</servlet-class>
+    <servlet-name>startServlet</servlet-name>
+    <servlet-class>obochuk.vlad.servlets.StartLottery</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>dealServlet</servlet-name>
+    <servlet-class>obochuk.vlad.servlets.MakeADeal</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>aboutServlet</servlet-name>
+    <servlet-class>obochuk.vlad.servlets.TempServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>startServlet</servlet-name>
+    <url-pattern>/start</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>dealServlet</servlet-name>
+    <url-pattern>/deal</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>aboutServlet</servlet-name>
+    <url-pattern>/about</url-pattern>
+  </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>baseServlet</servlet-name>
@@ -36,8 +61,4 @@
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
 
-  <servlet-mapping>
-    <servlet-name>photoServlet</servlet-name>
-    <url-pattern>/photoServlet</url-pattern>
-  </servlet-mapping>
 </web-app>

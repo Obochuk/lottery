@@ -1,12 +1,8 @@
-<%@ page import="java.util.Date" %>
-<%@ page import="java.util.Calendar" %>
-<%@ page import="java.time.LocalDateTime" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <title>Головна сторінка</title>
+    <title>New super LOTTERY</title>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -34,26 +30,25 @@
         <hr>
     </header>
 
+    <h1 align="center">Приймання ставки</h1>
+    <br>
+    <p style="font-size: 26px; color: red; border: 1px">${errMessage}</p>
+    <p style="font-size: 26px; color: green; border: 1px">${message}</p>
+
     <div class="content">
-        <strong><a href="deal">Зроби ставку</a> та вигравай просто зараз!</strong>
+        <strong>Визначте бажане число у межах від 0 до 2 000 000 000 та впишіть його у наступне поле:</strong>
+        <br>
+        <br>
         <br>
         <p style="vertical-align: middle">
-            <strong>Результати попереднього розіграшу</strong>
-        <p align="center" style="color: #8f80ff">
-            ${time} ${result}
+        <form action="deal" method="get">
+            <input type="number" name="number">
+            <a href="about" style="text-decoration: none; user-select: none; padding: .1em .2em; background: #8f80ff; text-align: right">?</a>
+            <br>
+            <input type="submit" value="Зробити ставку">
+        </form>
         </p>
-        ${text}
-        </p>
-
-        <strong>Не втрачай можливості взяти участь у наступному розіграші, що відбудеться
-            <%
-                Date today = new Date();
-                Date tomorrow = new Date(today.getTime() + (1000 * 60 * 60 * 24));
-                java.sql.Date tmr = new java.sql.Date(tomorrow.getTime());
-                out.print("<p align='center'>" + tmr + "</p>");
-            %>
-
-        </strong>
+        <br>
     </div>
 </div>
 

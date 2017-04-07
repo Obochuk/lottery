@@ -1,12 +1,8 @@
-<%@ page import="java.util.Date" %>
-<%@ page import="java.util.Calendar" %>
-<%@ page import="java.time.LocalDateTime" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <title>Головна сторінка</title>
+    <title>Вхід</title>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -34,27 +30,17 @@
         <hr>
     </header>
 
-    <div class="content">
-        <strong><a href="deal">Зроби ставку</a> та вигравай просто зараз!</strong>
-        <br>
-        <p style="vertical-align: middle">
-            <strong>Результати попереднього розіграшу</strong>
-        <p align="center" style="color: #8f80ff">
-            ${time} ${result}
-        </p>
-        ${text}
-        </p>
+    <h1 align="center">Вхід у систему</h1>
 
-        <strong>Не втрачай можливості взяти участь у наступному розіграші, що відбудеться
-            <%
-                Date today = new Date();
-                Date tomorrow = new Date(today.getTime() + (1000 * 60 * 60 * 24));
-                java.sql.Date tmr = new java.sql.Date(tomorrow.getTime());
-                out.print("<p align='center'>" + tmr + "</p>");
-            %>
+    <p style="color: red; border: 1px; font-size: 20px">${message}</p>
 
-        </strong>
-    </div>
+    <form  action="login" method="post">
+        <p align="center">Ім'я: <input type="text" name="userName"/> </p>
+        <p align="center">Пароль: <input type="password" name="userPassword"></p>
+        <p align="center"><input type="submit" value="Вхід"></p>
+    </form>
+    <p align="center">Якщо ви не зареєстровані у системі, то ви можете <a href="register">зареєструватися</a></p>
+
 </div>
 
 <p align="center">The developer is <a href="https://www.linkedin.com/in/vlad-obochuk-ab9494ba/">Vlad Obochuk</a>.
